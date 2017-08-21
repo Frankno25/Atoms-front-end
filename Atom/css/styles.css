@@ -1,0 +1,368 @@
+body{
+  background: #f8f2ff;
+}
+.headForm{
+  display: block;
+  position: relative;
+  height: 150px;
+  background: #5d10b1;
+}
+#fkno-quests {
+    width: 50%;
+    margin: auto;
+}
+
+#fkno-quests .block-flat {
+    padding: 0;
+}
+
+.quest .editable-label {
+    flex: .5;
+}
+
+.editable-label {
+    position: relative;
+}
+
+.editable-label input[type="text"] {
+    border: 0;
+    width: 100%;
+    position: relative;
+}
+
+.lg-input {
+    font-size: 30px;
+    font-weight: 600;
+    height: 41px;
+    padding-bottom: 20px;
+}
+
+.md-input {
+    font-size: 18px;
+    font-weight: 400;
+    height: 28px;
+}
+
+.sm-input {
+    font-size: 13px;
+    font-weight: 400;
+    height: 26px;
+}
+
+.editable-input {
+    background: transparent;
+}
+
+.editable-input+span:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0px;
+    height: 2px;
+    background: #2494F2;
+}
+
+.items{
+  background: white;
+}
+
+.items .items__item {
+    padding: 40px;
+    background: white;
+    margin-bottom: 14px
+}
+
+.divide20 {
+    position: relative;
+    height: 20px;
+    clear: both;
+    float: none;
+}
+
+.items__item--active {
+    //border-left: 3px solid #2494F2;
+    position: relative;
+    transition: box-shadow .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+    -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.items__item--active:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background: #2494F2;
+    top: 0;
+    left: 0;
+}
+
+.items__item--active .editable-label:not(.hover) {
+    border-bottom: 1px solid #ede7f6;
+}
+
+.items__item--active .editable-label.hover {
+    border-bottom: 1px solid transparent;
+}
+
+.option__item {
+    padding-left: 40px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.option__item--text, .option__item--paragraphe, .option__item--email, .option__item--password, .option__item--date, .option__item--heure {
+    padding-left: 0;
+}
+
+.option__item--select, .option__item--autocomplete {
+    padding-left: 20px;
+}
+
+.option__item--select .number, .option__item--autocomplete .number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 20px;
+    margin: auto;
+}
+
+.option__item--date>input[type=date], .option__item--heure>input[type=time], .option__item--text>input[type=text], .option__item--paragraphe>input[type=text], .option__item--email>input[type=email], .option__item--password>input[type=password] {
+    color: rgba(0, 0, 0, 0.38);
+    width: 100%;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px dashed #ede7f6;
+}
+
+.option__item--radio:before, .option__item--checkbox:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    border: 2px solid rgba(0, 0, 0, 0.26);
+}
+
+.option__item--radio:before {
+    border-radius: 50%;
+}
+
+.option__item--checkbox:before {
+    border-radius: 4px;
+}
+
+.items__item--default .quest {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/**
+   * @Name Select box
+   * @Description Créer un select box personnalisé et intélligent
+   * @Author Frankno
+   * @Version 1.0
+   */
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    margin: 5px 0;
+}
+
+div {
+    position: relative;
+}
+
+.fContainerSelect {
+    min-width: 250px;
+}
+
+.fContainerSelect .choice {
+    padding: 12px 44px;
+    color: #222;
+    white-space: normal;
+    word-wrap: normal;
+    cursor: pointer;
+    background: #f5f5f5;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.fContainerSelect .choice:after {
+    content: "";
+    border-color: rgba(68, 68, 68, 0.4) transparent;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 19px;
+    right: 19px;
+}
+
+
+/*On change .select_list si on l'a défini comme parametre du plugin*/
+
+.fContainerSelect .select_list {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    z-index: 2;
+    background: white;
+    min-width: 250px;
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.select_list__item--active {
+    background: #f5f5f5;
+}
+
+.select_list__item {
+    padding: 12px 44px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.type-option {
+    display: none;
+    position: absolute;
+    right: 0;
+}
+
+.items__item--active .type-option {
+    display: block;
+}
+
+.autreOption {
+    border-bottom: 1px solid transparent;
+}
+
+.autre {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #2494F2;
+    cursor: pointer;
+}
+
+.show-on-active {
+    display: none;
+}
+
+.items__item--active .show-on-active {
+    display: block;
+}
+
+.container-actions {
+    position: absolute;
+    right: -70px;
+    top: 0;
+    width: 50px;
+    background: white;
+    z-index: 2;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.actions__add {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.actions__add [class^="flaticon-"]:before, .actions__add [class*=" flaticon-"]:before, .actions__add [class^="flaticon-"]:after, .actions__add [class*=" flaticon-"]:after {
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+}
+
+.actions__add--quest, .actions__add--head {
+    position: relative;
+}
+
+.actions__add--quest:before {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    content: "";
+    opacity: .54;
+    background: url(http://ssl.gstatic.com/docs/forms/qp_sprite84.svg) no-repeat center -1224px;
+}
+
+.actions__add--head:before {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    content: "";
+    opacity: .54;
+    background: url(http://ssl.gstatic.com/docs/forms/qp_sprite84.svg) no-repeat center -960px;
+}
+
+
+/*MEDIA QUERY*/
+
+@media (min-width: 1201px) {
+    input, .editable-label input[type=text], input:after, span:after, .select_list__item, .choice:after, .select_list, .autreOption, .actions__add--quest {
+        -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out
+    }
+    input.editable-input[type="text"]:focus+span:after {
+        width: 100%;
+    }
+    .editable-label.hover:hover {
+        border-color: #ede7f6 !important;
+    }
+    .select_list__item:hover {
+        background: #f5f5f5;
+    }
+    .choice:hover:after {
+        opacity: .5;
+    }
+    .autreOption:hover {
+        border-color: #ede7f6;
+    }
+    /* .actions__add--quest:hover{
+      background: #f1f1f1 url("../Composants/css/flatIcon/svg/049-add.svg") no-repeat center;
+      background-size: 40%;
+      opacity: .8;
+    } */
+}

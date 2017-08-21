@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Atom</title>
+<meta name="description" content="" />
+<meta name="keywords" content=""/>
+<meta name="Geography" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="js/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="headForm">
+  </div>
+  <div class="cl-mcont" id="fkno-quests">
+    <div class="block-flat">
+      <div class="items"></div>
+    </div>
+    <div class="container-actions">
+      <ul class="actions">
+        <li class="actions actions__add actions__add--quest"></li>
+        <li class="actions actions__add actions__add--head"></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TEMPLATE TITRE FORMULAIRE -->
+  <script id="formHead-template" type="text/template">
+    <div class="items__item items__item--headForm items__item--active">
+      <div class="editable-label">
+        <input type="text" name="titreFormulaire" class="editable-input lg-input" id="titreFormulaire" placeholder="Titre du Formulaire" value=""/>
+        <span></span>
+      </div>
+
+      <div class="divide20"></div>
+      <div class="editable-label">
+        <input type="text" name="descriptionFormulaire" class="editable-input sm-input" id="descriptionFormulaire" placeholder="Description du Formulaire" value=""/>
+        <span></span>
+      </div>
+    </div>
+  </script>
+
+  <!-- TEMPLATE TITRE TITRE & DESCRIPTION -->
+  <script id="title-template" type="text/template">
+    <div class="items__item items__item--default" id="removeAfterAdd1">
+      <div class="editable-label">
+        <input type="text" name="titreQuestionnaire" class="editable-input md-input" id="titreQuestionnaire" placeholder="Sans titre" value=""/>
+        <span></span>
+      </div>
+
+      <div class="divide20"></div>
+      <div class="editable-label">
+        <input type="text" name="descriptionQuestionnaire" class="editable-input sm-input" id="descriptionQuestionnaire" placeholder="Description (facultative)" value=""/>
+        <span></span>
+      </div>
+    </div>
+  </script>
+
+  <!-- TEMPLATE QUESTIONNAIRE -->
+  <script id="itemDefault-template" type="text/template">
+    <div class="items__item items__item--default" id="removeAfterAdd">
+      <div class="quest">
+        <div class="editable-label">
+          <input type="text" name="question" class="editable-input md-input" id="question" placeholder="Question" value=""/>
+          <span></span>
+        </div>
+
+        <div class="add-file"></div>
+        <div class="type-option">
+          <div class="custom-select">
+            <select class="fQuests">
+              <optgroup label="groupe1">
+                <option value="reponseCourte">R&eacute;ponse courte</option>
+                <option value="paragraphe">Paragraphe</option>
+                <option value="email">Email</option>
+                <option value="password">Mot de passe</option>
+              </optgroup>
+
+              <optgroup label="groupe2">
+                <option value="choixMultiple">Choix multiples</option>
+                <option value="caseACocher">Case &agrave; cocher</option>
+                <option value="listeDeroulante">Liste d&eacute;roulante</option>
+                <option value="autoComplete">Auto compl&eacute;tion</option>
+              </optgroup>
+
+              <optgroup label="groupe4">
+              </optgroup>
+
+              <optgroup label="groupe5">
+                <option value="date">Date</option>
+                <option value="heure">Heure</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="divide20"></div>
+
+      <div class="option">
+        <div class="option__item option__item--radio">
+          <div class="editable-label hover">
+            <input type="text" name="radio1" class="editable-input sm-input" id="option1" placeholder="Option 1" value=""/>
+            <span></span>
+          </div>
+        </div>
+        <div class="option__item option__item--radio show-on-active">
+          <div class="ajout-option">
+            <span class="autreOption">Ajouter une option</span><span class="autre"> or ajouter "autre"</span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </script>
+  <script type="text/javascript" src="js/jquery-min.js"></script>
+  <script type="text/javascript" src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/atomJs.js"></script>
+  <script type="text/javascript">
+    (function($){
+      $(".fQuests").fQuests();
+
+    })(jQuery);
+  </script>
+</body>
+</html>
+
